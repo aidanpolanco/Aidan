@@ -3,73 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aidan Polanco — Creative Marketing & AI</title>
-  <meta name="description" content="Bilingual marketing strategist, AI consultant, and web developer with 5+ years driving measurable growth. Based in New Milford, NJ." />
+  <title>Aidan Polanco — Creative Marketing &amp; AI</title>
+  <meta name="description" content="Bilingual marketing strategist, AI consultant, and web developer with 5+ years driving measurable growth." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
 </head>
 <body class="is-loading">
 
-  <!-- Preloader -->
+  <!-- ── Preloader ───────────────────────────────────────────── -->
   <div id="preloader">
-    <div class="loader-inner">
-      <div class="loader-logo">AP</div>
-      <div class="loader-bar-wrap">
-        <div class="loader-bar-fill" id="loaderFill"></div>
-      </div>
-      <div class="loader-num"><span id="loaderCount">0</span>%</div>
+    <div class="pl-wrap">
+      <div class="pl-logo">AP</div>
+      <div class="pl-bar"><div class="pl-fill" id="plFill"></div></div>
+      <div class="pl-pct"><span id="plNum">0</span>%</div>
     </div>
   </div>
 
-  <!-- Custom Cursor -->
-  <div class="c-dot" id="cDot"></div>
+  <!-- ── Cursor ─────────────────────────────────────────────── -->
+  <div class="c-dot"  id="cDot"></div>
   <div class="c-ring" id="cRing"></div>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-bar" id="scrollBar"></div>
+  <!-- ── Scroll Progress ────────────────────────────────────── -->
+  <div class="sp" id="sp"></div>
 
-  <!-- Grain Texture -->
+  <!-- ── Grain ──────────────────────────────────────────────── -->
   <div class="grain" aria-hidden="true"></div>
 
-  <!-- ─── NAVBAR ─── -->
-  <nav class="nav" id="nav">
+  <!-- ── Nav ────────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
     <a href="#home" class="nav-logo">
       <span class="nb">[</span>AP<span class="nb">]</span>
     </a>
-    <ul class="nav-list" id="navList">
-      <li><a href="#about"      class="nav-link" data-text="About">About</a></li>
-      <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
-      <li><a href="#skills"     class="nav-link" data-text="Skills">Skills</a></li>
-      <li><a href="#contact"    class="nav-link" data-text="Contact">Contact</a></li>
-    </ul>
-    <a href="mailto:polancoadvisory@gmail.com" class="nav-btn btn-mag">Let's Talk</a>
-    <button class="burger" id="burger" aria-label="Menu">
+    <nav class="nav-links" id="navLinks">
+      <a href="#about"      class="nav-a" data-text="About">About</a>
+      <a href="#experience" class="nav-a" data-text="Experience">Experience</a>
+      <a href="#skills"     class="nav-a" data-text="Skills">Skills</a>
+      <a href="#work"       class="nav-a" data-text="Work">Work</a>
+      <a href="#contact"    class="nav-a" data-text="Contact">Contact</a>
+    </nav>
+    <a href="mailto:polancoadvisory@gmail.com" class="nav-cta btn-mag">Let's Talk</a>
+    <button class="burger" id="burger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
-  </nav>
+  </header>
 
-  <!-- ─── HERO ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════════ -->
   <section class="hero" id="home">
-    <!-- Aurora blobs -->
-    <div class="aurora" aria-hidden="true">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
+
+    <!-- bg layers -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hb-grid"></div>
+      <div class="hb-blob hb-b1"></div>
+      <div class="hb-blob hb-b2"></div>
+      <div class="hb-blob hb-b3"></div>
     </div>
 
     <div class="hero-inner">
-      <!-- Left -->
+
+      <!-- left -->
       <div class="hero-left">
         <div class="hero-pill">
-          <span class="pill-dot"></span> Available for Projects
+          <span class="hp-dot"></span>Available for Projects
         </div>
-        <h1 class="hero-name" id="heroName">Aidan Polanco</h1>
+
+        <h1 class="hero-name">
+          <span class="hn-solid" id="hn1">Aidan</span>
+          <span class="hn-outline" id="hn2">Polanco</span>
+        </h1>
+
         <div class="hero-role">
-          <span class="role-pre">I do&nbsp;</span>
-          <div class="role-window">
-            <div class="role-track" id="roleTrack">
+          <span class="hr-pre">I do&nbsp;</span>
+          <div class="hr-window">
+            <div class="hr-track" id="hrTrack">
               <span>Creative Marketing</span>
               <span>AI &amp; Automation</span>
               <span>Web Development</span>
@@ -79,298 +89,289 @@
             </div>
           </div>
         </div>
-        <p class="hero-desc">
-          Bilingual marketing strategist &amp; AI consultant with <strong>5+ years</strong> turning
-          data into growth and code into experiences. Currently at
-          <em>Reworld™</em> &amp; <em>Handshake AI</em>.
+
+        <p class="hero-body">
+          Bilingual strategist and technologist with 5+ years turning bold ideas
+          into measurable outcomes — across enterprise content, AI systems,
+          and full-stack digital products.
         </p>
-        <div class="hero-btns">
-          <a href="#experience" class="btn btn-primary btn-mag">View My Work</a>
-          <a href="#contact"    class="btn btn-ghost  btn-mag">Get In Touch</a>
+
+        <div class="hero-ctas">
+          <a href="#work"    class="btn btn-primary btn-mag">View Work</a>
+          <a href="#contact" class="btn btn-ghost   btn-mag">Get in Touch</a>
         </div>
-        <div class="hero-tags">
-          <span>🇺🇸 EN · 🇪🇸 ES</span>
-          <span>📍 New Milford, NJ</span>
-          <span>🎓 Ramapo College</span>
-          <span>🥋 Athlete</span>
+
+        <div class="hero-meta">
+          <span>New Milford, NJ</span>
+          <span class="hm-dot"></span>
+          <span>EN &nbsp;·&nbsp; ES</span>
+          <span class="hm-dot"></span>
+          <span>Reworld™ &amp; Handshake AI</span>
         </div>
       </div>
 
-      <!-- Right — floating stat cards -->
-      <div class="hero-right" aria-label="Key metrics">
-        <div class="stat-card float-a tilt-card">
-          <div class="sc-top">
-            <span class="sc-icon">📈</span>
-            <span class="sc-label">Audience Growth</span>
-          </div>
-          <div class="sc-num"><span class="count-up" data-target="179">0</span>%</div>
-          <div class="sc-sub">Little Thinkers NYC</div>
+      <!-- right — stat cards -->
+      <div class="hero-right">
+        <div class="stat-card sa tilt-card">
+          <div class="sc-ico"><i data-lucide="trending-up"></i></div>
+          <div class="sc-val"><span class="count-up" data-target="179">0</span>%</div>
+          <div class="sc-lbl">Audience Growth</div>
+          <div class="sc-src">Little Thinkers NYC</div>
         </div>
-        <div class="stat-card float-b tilt-card">
-          <div class="sc-top">
-            <span class="sc-icon">⚡</span>
-            <span class="sc-label">Engagement Lift</span>
-          </div>
-          <div class="sc-num"><span class="count-up" data-target="124">0</span>%</div>
-          <div class="sc-sub">Social Campaigns</div>
+        <div class="stat-card sb tilt-card">
+          <div class="sc-ico"><i data-lucide="zap"></i></div>
+          <div class="sc-val"><span class="count-up" data-target="124">0</span>%</div>
+          <div class="sc-lbl">Engagement Lift</div>
+          <div class="sc-src">Social Campaigns</div>
         </div>
-        <div class="stat-card float-c tilt-card">
-          <div class="sc-top">
-            <span class="sc-icon">💰</span>
-            <span class="sc-label">Revenue Increase</span>
-          </div>
-          <div class="sc-num"><span class="count-up" data-target="68">0</span>%</div>
-          <div class="sc-sub">3-Year Tenure</div>
+        <div class="stat-card sc tilt-card">
+          <div class="sc-ico"><i data-lucide="bar-chart-2"></i></div>
+          <div class="sc-val"><span class="count-up" data-target="68">0</span>%</div>
+          <div class="sc-lbl">Revenue Increase</div>
+          <div class="sc-src">3-Year Tenure</div>
         </div>
-        <div class="stat-card float-d tilt-card">
-          <div class="sc-top">
-            <span class="sc-icon">🤖</span>
-            <span class="sc-label">LLMs Fine-Tuned</span>
-          </div>
-          <div class="sc-num">4+</div>
-          <div class="sc-sub">GPT · Claude · Gemini · Llama</div>
+        <div class="stat-card sd tilt-card">
+          <div class="sc-ico"><i data-lucide="cpu"></i></div>
+          <div class="sc-val">4+</div>
+          <div class="sc-lbl">LLMs Fine-Tuned</div>
+          <div class="sc-src">GPT · Claude · Gemini · Llama</div>
         </div>
       </div>
+
     </div>
 
-    <!-- Scroll hint -->
     <div class="hero-scroll-hint">
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <div class="hsh-mouse"><div class="hsh-wheel"></div></div>
       <span>Scroll</span>
     </div>
+
   </section>
 
-  <!-- ─── MARQUEE ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       MARQUEE
+  ══════════════════════════════════════════════════════════════ -->
   <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-inner" id="marqueeInner">
-        <span>SEO / SEM</span><em>✦</em>
-        <span>OpenAI API</span><em>✦</em>
-        <span>React</span><em>✦</em>
-        <span>LLM Fine-Tuning</span><em>✦</em>
-        <span>HubSpot</span><em>✦</em>
-        <span>Adobe Suite</span><em>✦</em>
-        <span>Figma</span><em>✦</em>
-        <span>Prompt Engineering</span><em>✦</em>
-        <span>Brand Strategy</span><em>✦</em>
-        <span>A/B Testing</span><em>✦</em>
-        <span>JavaScript</span><em>✦</em>
-        <span>Content Strategy</span><em>✦</em>
-        <span>Google Analytics</span><em>✦</em>
-        <span>After Effects</span><em>✦</em>
-        <span>Email Marketing</span><em>✦</em>
+    <div class="marquee-row">
+      <div class="marquee-inner">
+        <span>SEO / SEM</span><em>✦</em><span>OpenAI API</span><em>✦</em>
+        <span>React</span><em>✦</em><span>LLM Fine-Tuning</span><em>✦</em>
+        <span>HubSpot</span><em>✦</em><span>Prompt Engineering</span><em>✦</em>
+        <span>Adobe Suite</span><em>✦</em><span>Figma</span><em>✦</em>
+        <span>Brand Strategy</span><em>✦</em><span>A/B Testing</span><em>✦</em>
+        <span>JavaScript</span><em>✦</em><span>Content Strategy</span><em>✦</em>
+        <span>Google Analytics</span><em>✦</em><span>After Effects</span><em>✦</em>
         <!-- duplicate for seamless loop -->
-        <span>SEO / SEM</span><em>✦</em>
-        <span>OpenAI API</span><em>✦</em>
-        <span>React</span><em>✦</em>
-        <span>LLM Fine-Tuning</span><em>✦</em>
-        <span>HubSpot</span><em>✦</em>
-        <span>Adobe Suite</span><em>✦</em>
-        <span>Figma</span><em>✦</em>
-        <span>Prompt Engineering</span><em>✦</em>
-        <span>Brand Strategy</span><em>✦</em>
-        <span>A/B Testing</span><em>✦</em>
-        <span>JavaScript</span><em>✦</em>
-        <span>Content Strategy</span><em>✦</em>
-        <span>Google Analytics</span><em>✦</em>
-        <span>After Effects</span><em>✦</em>
-        <span>Email Marketing</span><em>✦</em>
+        <span>SEO / SEM</span><em>✦</em><span>OpenAI API</span><em>✦</em>
+        <span>React</span><em>✦</em><span>LLM Fine-Tuning</span><em>✦</em>
+        <span>HubSpot</span><em>✦</em><span>Prompt Engineering</span><em>✦</em>
+        <span>Adobe Suite</span><em>✦</em><span>Figma</span><em>✦</em>
+        <span>Brand Strategy</span><em>✦</em><span>A/B Testing</span><em>✦</em>
+        <span>JavaScript</span><em>✦</em><span>Content Strategy</span><em>✦</em>
+        <span>Google Analytics</span><em>✦</em><span>After Effects</span><em>✦</em>
       </div>
     </div>
   </div>
 
-  <!-- ─── ABOUT ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════════════════ -->
   <section class="section about" id="about">
     <div class="container">
-      <p class="sec-label reveal-up">01 — About</p>
       <div class="about-grid">
-        <div class="about-text reveal-left">
-          <h2 class="sec-heading">Creative meets<br /><span class="gt">Technical.</span></h2>
-          <p>
-            I'm a bilingual marketing strategist and AI consultant who lives at the intersection of
-            <strong>creativity</strong>, <strong>technology</strong>, and <strong>measurable results</strong>.
-            Five years in, I've worked across enterprise content, social growth, AI automation,
-            and full-stack web development — a rare combo that lets me speak fluently across
-            boardrooms and code editors alike.
+
+        <div class="about-left reveal-left">
+          <p class="eyebrow">01 — About</p>
+          <h2 class="sec-h">Built to<br /><span class="gt">Execute.</span></h2>
+          <p class="body-text">
+            I don't separate strategy from execution. I understand the full picture —
+            from audience psychology and brand positioning to the code that ships the product.
+            That rare combination is what makes the work actually move numbers.
           </p>
-          <p>
-            When I'm not at my desk, you'll find me on the mat. I've trained
-            <strong>wrestling for 12 years</strong>, <strong>Brazilian Jiu Jitsu for 4</strong>,
-            and <strong>Muay Thai for 3</strong>. The same discipline, pattern recognition, and
-            strategic thinking I use in combat sports is exactly what I bring to every project.
+          <p class="body-text">
+            Bilingual in English and Spanish, I've operated across startups, agencies,
+            and enterprise orgs — adapting fast, moving efficiently, and leaving a
+            measurable mark every time.
           </p>
-          <a href="mailto:polancoadvisory@gmail.com" class="btn btn-primary btn-mag" style="margin-top:8px;">Say Hello</a>
+          <div class="about-athletics">
+            Wrestling &nbsp;·&nbsp; Brazilian Jiu-Jitsu &nbsp;·&nbsp; Muay Thai
+          </div>
         </div>
 
-        <div class="about-bento reveal-right">
-          <div class="bento-main bento-card tilt-card">
-            <div class="bento-av">AP</div>
-            <div>
-              <div class="bento-name">Aidan Polanco</div>
-              <div class="bento-title">Creative Marketing &amp; AI Specialist</div>
+        <div class="about-right reveal-right">
+          <div class="ab-grid">
+            <div class="ab-card ab-main tilt-card">
+              <div class="ab-av">AP</div>
+              <div>
+                <div class="ab-name">Aidan Polanco</div>
+                <div class="ab-title">Creative Marketing &amp; AI Specialist</div>
+              </div>
             </div>
-          </div>
-
-          <div class="bento-row">
-            <div class="bento-card bento-sm tilt-card">
-              <div class="bento-icon">📍</div>
-              <div class="bento-lbl">Location</div>
-              <div class="bento-val">New Milford, NJ</div>
+            <div class="ab-row">
+              <div class="ab-card ab-sm tilt-card">
+                <i data-lucide="map-pin"></i>
+                <div class="ab-lbl">Location</div>
+                <div class="ab-val">New Milford, NJ</div>
+              </div>
+              <div class="ab-card ab-sm tilt-card">
+                <i data-lucide="globe"></i>
+                <div class="ab-lbl">Languages</div>
+                <div class="ab-val">EN · ES</div>
+              </div>
             </div>
-            <div class="bento-card bento-sm tilt-card">
-              <div class="bento-icon">🌎</div>
-              <div class="bento-lbl">Languages</div>
-              <div class="bento-val">EN · ES</div>
+            <div class="ab-row">
+              <div class="ab-card ab-sm tilt-card">
+                <i data-lucide="graduation-cap"></i>
+                <div class="ab-lbl">Education</div>
+                <div class="ab-val">BA Marketing<br />Ramapo College</div>
+              </div>
+              <div class="ab-card ab-sm tilt-card">
+                <i data-lucide="briefcase"></i>
+                <div class="ab-lbl">Experience</div>
+                <div class="ab-val">5+ Years</div>
+              </div>
             </div>
-          </div>
-
-          <div class="bento-card bento-wide tilt-card">
-            <div class="bento-icon">🥋</div>
-            <div class="bento-lbl">Athletics</div>
-            <div class="bento-pills">
-              <span>Wrestling · 12 yrs</span>
-              <span>BJJ · 4 yrs</span>
-              <span>Muay Thai · 3 yrs</span>
-            </div>
-          </div>
-
-          <div class="bento-card bento-sm tilt-card">
-            <div class="bento-icon">🎓</div>
-            <div class="bento-lbl">Degree</div>
-            <div class="bento-val">BA Marketing<br/>Ramapo College</div>
-          </div>
-
-          <div class="bento-card bento-sm tilt-card">
-            <div class="bento-icon">⚙️</div>
-            <div class="bento-lbl">Experience</div>
-            <div class="bento-val">5+ Years</div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ─── EXPERIENCE ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       STATS BREAK
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="stats-break">
+    <div class="sb-bg" aria-hidden="true"></div>
+    <div class="container">
+      <p class="sb-eyebrow reveal-up">Measured results. Every time.</p>
+      <div class="sb-row">
+        <div class="sb-item reveal-up" style="--d:0ms">
+          <div class="sb-num"><span class="scramble" data-target="179">0</span>%</div>
+          <div class="sb-lbl">Audience Growth</div>
+        </div>
+        <div class="sb-div"></div>
+        <div class="sb-item reveal-up" style="--d:120ms">
+          <div class="sb-num"><span class="scramble" data-target="124">0</span>%</div>
+          <div class="sb-lbl">Engagement Lift</div>
+        </div>
+        <div class="sb-div"></div>
+        <div class="sb-item reveal-up" style="--d:240ms">
+          <div class="sb-num"><span class="scramble" data-target="68">0</span>%</div>
+          <div class="sb-lbl">Revenue Increase</div>
+        </div>
+      </div>
+      <p class="sb-attr reveal-up">Little Thinkers NYC &nbsp;·&nbsp; 3-Year Tenure</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════════════════════════════════ -->
   <section class="section experience" id="experience">
     <div class="container">
-      <p class="sec-label reveal-up">02 — Experience</p>
-      <h2 class="sec-heading reveal-up">Where I've <span class="gt">Worked.</span></h2>
+      <p class="eyebrow reveal-up">02 — Experience</p>
+      <h2 class="sec-h reveal-up">Where I've <span class="gt">Operated.</span></h2>
 
       <div class="timeline">
 
-        <!-- Reworld -->
         <div class="tl-item reveal-up" style="--d:0ms">
-          <div class="tl-dot"></div>
+          <div class="tl-node"><div class="tl-dot"></div></div>
           <div class="tl-card tilt-card">
             <div class="tl-head">
-              <div class="tl-left">
-                <div class="tl-role">Creative Marketing Specialist</div>
-                <div class="tl-company">Reworld™</div>
+              <div>
+                <h3 class="tl-role">Creative Marketing Specialist</h3>
+                <p class="tl-co">Reworld™</p>
               </div>
-              <div class="tl-right">
+              <div class="tl-meta">
                 <span class="tl-badge">Hybrid</span>
                 <span class="tl-date">Present</span>
               </div>
             </div>
-            <ul class="tl-bullets">
-              <li>Drive <strong>2x growth</strong> in CTA submissions through high-volume SEO content strategy including pillar pages, blogs &amp; landing pages</li>
-              <li>Architect content strategy positioning Reworld as an authority in ESG and sustainable waste solutions</li>
-              <li>Design web pages, branded graphics &amp; campaign assets aligned with zero-waste-to-landfill messaging</li>
-              <li>Manage end-to-end content pipelines via HubSpot &amp; SharePoint across a distributed organization</li>
+            <ul class="tl-list">
+              <li>Driving <strong>2x CTA growth</strong> through high-volume SEO content — pillar pages, blogs, and landing pages</li>
+              <li>Positioning Reworld as an ESG and sustainability authority through content architecture</li>
+              <li>Designing web pages and campaign assets aligned with zero-waste enterprise messaging</li>
+              <li>Managing end-to-end content pipelines via HubSpot and SharePoint across a distributed org</li>
             </ul>
             <div class="tl-chips">
-              <span>SEO</span><span>HubSpot</span><span>Content Strategy</span><span>SharePoint</span><span>Web Design</span>
+              <span>SEO</span><span>HubSpot</span><span>Content Strategy</span><span>Web Design</span>
             </div>
           </div>
         </div>
 
-        <!-- Handshake AI -->
-        <div class="tl-item reveal-up" style="--d:100ms">
-          <div class="tl-dot"></div>
+        <div class="tl-item reveal-up" style="--d:80ms">
+          <div class="tl-node"><div class="tl-dot"></div></div>
           <div class="tl-card tilt-card">
             <div class="tl-head">
-              <div class="tl-left">
-                <div class="tl-role">AI &amp; Automation Consultant</div>
-                <div class="tl-company">Handshake AI</div>
+              <div>
+                <h3 class="tl-role">AI &amp; Automation Consultant</h3>
+                <p class="tl-co">Handshake AI</p>
               </div>
-              <div class="tl-right">
+              <div class="tl-meta">
                 <span class="tl-badge">Remote</span>
                 <span class="tl-date">2024 – Present</span>
               </div>
             </div>
-            <ul class="tl-bullets">
-              <li>Train &amp; fine-tune <strong>GPT-4, Claude, Gemini, and Llama</strong> — optimizing model behavior for production-grade applications</li>
-              <li>Engineer advanced prompt frameworks powering AI workflows in marketing, operations &amp; product</li>
-              <li>Build &amp; deploy intelligent automation solutions via the OpenAI API, measurably reducing manual workload at scale</li>
+            <ul class="tl-list">
+              <li>Training and fine-tuning <strong>GPT-4, Claude, Gemini, and Llama</strong> for production-grade applications</li>
+              <li>Engineering advanced prompt frameworks powering workflows in marketing, ops, and product</li>
+              <li>Building intelligent automation via the OpenAI API — measurably reducing manual workload at scale</li>
             </ul>
             <div class="tl-chips">
-              <span>OpenAI API</span><span>Prompt Engineering</span><span>LLM Fine-Tuning</span><span>Claude</span><span>Gemini</span>
+              <span>OpenAI API</span><span>Prompt Engineering</span><span>LLM Fine-Tuning</span><span>Automation</span>
             </div>
           </div>
         </div>
 
-        <!-- Little Thinkers -->
-        <div class="tl-item reveal-up" style="--d:200ms">
-          <div class="tl-dot"></div>
+        <div class="tl-item reveal-up" style="--d:160ms">
+          <div class="tl-node"><div class="tl-dot"></div></div>
           <div class="tl-card tilt-card">
             <div class="tl-head">
-              <div class="tl-left">
-                <div class="tl-role">Marketing Associate</div>
-                <div class="tl-company">Little Thinkers NYC</div>
+              <div>
+                <h3 class="tl-role">Marketing Associate</h3>
+                <p class="tl-co">Little Thinkers NYC</p>
               </div>
-              <div class="tl-right">
+              <div class="tl-meta">
                 <span class="tl-badge">New York, NY</span>
                 <span class="tl-date">2021 – 2024</span>
               </div>
             </div>
-            <ul class="tl-bullets">
-              <li>Grew brand social following by <strong>179%</strong> through platform-specific content strategy and precision audience targeting</li>
-              <li>Drove a <strong>124% increase in engagement</strong> across all digital platforms</li>
-              <li>Executed cross-platform campaigns contributing to a <strong>68% boost in sales</strong> over three years</li>
+            <ul class="tl-list">
+              <li>Grew brand following by <strong>179%</strong> and drove a <strong>124% engagement increase</strong> through platform-specific strategy</li>
+              <li>Executed cross-platform campaigns contributing to a <strong>68% sales boost</strong> over three years</li>
               <li>Built SEO/SEM programs, A/B tested email sequences, and tracked KPIs in Google Analytics</li>
             </ul>
-            <!-- Metrics row -->
             <div class="tl-metrics">
-              <div class="tl-met">
-                <span class="tl-met-n">179%</span>
-                <span class="tl-met-l">Followers</span>
-              </div>
-              <div class="tl-met">
-                <span class="tl-met-n">124%</span>
-                <span class="tl-met-l">Engagement</span>
-              </div>
-              <div class="tl-met">
-                <span class="tl-met-n">68%</span>
-                <span class="tl-met-l">Revenue</span>
-              </div>
+              <div class="tm"><span class="tm-n">179%</span><span class="tm-l">Followers</span></div>
+              <div class="tm"><span class="tm-n">124%</span><span class="tm-l">Engagement</span></div>
+              <div class="tm"><span class="tm-n">68%</span><span class="tm-l">Revenue</span></div>
             </div>
             <div class="tl-chips">
-              <span>Social Media</span><span>SEO/SEM</span><span>Email Marketing</span><span>Google Analytics</span><span>A/B Testing</span>
+              <span>Social Media</span><span>SEO/SEM</span><span>Email Marketing</span><span>Analytics</span>
             </div>
           </div>
         </div>
 
-        <!-- Design Engineer Hub -->
-        <div class="tl-item reveal-up" style="--d:300ms">
-          <div class="tl-dot"></div>
+        <div class="tl-item reveal-up" style="--d:240ms">
+          <div class="tl-node"><div class="tl-dot"></div></div>
           <div class="tl-card tilt-card">
             <div class="tl-head">
-              <div class="tl-left">
-                <div class="tl-role">Web Designer &amp; Front-End Developer</div>
-                <div class="tl-company">Design Engineer Hub</div>
+              <div>
+                <h3 class="tl-role">Web Designer &amp; Front-End Developer</h3>
+                <p class="tl-co">Design Engineer Hub</p>
               </div>
-              <div class="tl-right">
+              <div class="tl-meta">
                 <span class="tl-badge">Freelance</span>
                 <span class="tl-date">2020 – Present</span>
               </div>
             </div>
-            <ul class="tl-bullets">
-              <li>Build responsive, SEO-optimized client websites using HTML, CSS, JavaScript, React &amp; Bootstrap</li>
-              <li>Design UI/UX prototypes in Figma &amp; Adobe XD; integrate third-party APIs including payment gateways</li>
-              <li>Manage full project lifecycle — discovery, design, development &amp; launch — across multiple concurrent engagements</li>
+            <ul class="tl-list">
+              <li>Building responsive, SEO-optimized client sites using HTML, CSS, JavaScript, React, and Bootstrap</li>
+              <li>Designing UI/UX prototypes in Figma and Adobe XD; integrating third-party APIs</li>
+              <li>Managing full project lifecycle — discovery, design, development, and launch</li>
             </ul>
             <div class="tl-chips">
-              <span>React</span><span>JavaScript</span><span>Figma</span><span>HTML/CSS</span><span>Bootstrap</span><span>Adobe XD</span>
+              <span>React</span><span>JavaScript</span><span>Figma</span><span>HTML/CSS</span><span>Bootstrap</span>
             </div>
           </div>
         </div>
@@ -379,67 +380,48 @@
     </div>
   </section>
 
-  <!-- ─── SKILLS ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════════════════════════════ -->
   <section class="section skills" id="skills">
     <div class="container">
-      <p class="sec-label reveal-up">03 — Skills</p>
-      <h2 class="sec-heading reveal-up">The <span class="gt">Toolkit.</span></h2>
+      <p class="eyebrow reveal-up">03 — Capabilities</p>
+      <h2 class="sec-h reveal-up">The <span class="gt">Toolkit.</span></h2>
       <div class="skills-grid">
 
         <div class="sk-card tilt-card reveal-up" style="--d:0ms">
-          <div class="sk-icon">📣</div>
-          <h3>Marketing</h3>
+          <div class="sk-head"><i data-lucide="target"></i><h3>Strategy &amp; Marketing</h3></div>
           <div class="sk-tags">
-            <span>SEO / SEM</span>
-            <span>Social Media Strategy</span>
-            <span>Campaign Analytics</span>
-            <span>Email Marketing</span>
-            <span>Brand Development</span>
-            <span>A/B Testing</span>
-            <span>Content Strategy</span>
+            <span>SEO / SEM</span><span>Social Strategy</span><span>Campaign Analytics</span>
+            <span>Email Marketing</span><span>Brand Development</span>
+            <span>A/B Testing</span><span>Content Strategy</span>
           </div>
         </div>
 
         <div class="sk-card tilt-card reveal-up" style="--d:80ms">
-          <div class="sk-icon">🤖</div>
-          <h3>AI &amp; Automation</h3>
+          <div class="sk-head"><i data-lucide="cpu"></i><h3>AI &amp; Automation</h3></div>
           <div class="sk-tags">
-            <span>OpenAI API</span>
-            <span>Prompt Engineering</span>
-            <span>LLM Fine-Tuning</span>
-            <span>GPT Automation</span>
-            <span>Workflow Integration</span>
-            <span>HubSpot</span>
-            <span>SharePoint</span>
+            <span>OpenAI API</span><span>Prompt Engineering</span><span>LLM Fine-Tuning</span>
+            <span>GPT Automation</span><span>Workflow Integration</span>
+            <span>HubSpot</span><span>SharePoint</span>
           </div>
         </div>
 
         <div class="sk-card tilt-card reveal-up" style="--d:160ms">
-          <div class="sk-icon">💻</div>
-          <h3>Web &amp; Dev</h3>
+          <div class="sk-head"><i data-lucide="code-2"></i><h3>Web &amp; Development</h3></div>
           <div class="sk-tags">
-            <span>HTML</span>
-            <span>CSS / SCSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-            <span>Bootstrap</span>
-            <span>Figma</span>
-            <span>Google Analytics</span>
-            <span>Meta Business Suite</span>
+            <span>HTML / CSS</span><span>JavaScript</span><span>React</span>
+            <span>Bootstrap</span><span>Figma</span>
+            <span>Google Analytics</span><span>Meta Business Suite</span>
           </div>
         </div>
 
         <div class="sk-card tilt-card reveal-up" style="--d:240ms">
-          <div class="sk-icon">🎨</div>
-          <h3>Adobe Suite</h3>
+          <div class="sk-head"><i data-lucide="layers"></i><h3>Creative &amp; Design</h3></div>
           <div class="sk-tags">
-            <span>Photoshop</span>
-            <span>Illustrator</span>
-            <span>InDesign</span>
-            <span>Premiere Pro</span>
-            <span>After Effects</span>
-            <span>Lightroom</span>
-            <span>XD</span>
+            <span>Photoshop</span><span>Illustrator</span><span>InDesign</span>
+            <span>Premiere Pro</span><span>After Effects</span>
+            <span>Lightroom</span><span>Adobe XD</span>
           </div>
         </div>
 
@@ -447,44 +429,87 @@
     </div>
   </section>
 
-  <!-- ─── CONTACT ─── -->
+  <!-- ══════════════════════════════════════════════════════════
+       WORK
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section work" id="work">
+    <div class="container">
+      <p class="eyebrow reveal-up">04 — Work</p>
+      <h2 class="sec-h reveal-up">Selected <span class="gt">Projects.</span></h2>
+      <div class="work-grid">
+
+        <div class="proj-card pc-wide reveal-up tilt-card" style="--d:0ms">
+          <div class="pc-num">01</div>
+          <div class="pc-body">
+            <h3>Enterprise Content Strategy</h3>
+            <p>High-volume SEO architecture for Reworld™ — pillar pages, landing pages, and blog content driving 2x CTA growth across all digital properties.</p>
+            <div class="pc-tags"><span>SEO</span><span>Content Strategy</span><span>HubSpot</span><span>Web Design</span></div>
+          </div>
+          <div class="pc-arr"><i data-lucide="arrow-up-right"></i></div>
+        </div>
+
+        <div class="proj-card reveal-up tilt-card" style="--d:80ms">
+          <div class="pc-num">02</div>
+          <div class="pc-body">
+            <h3>AI Automation Suite</h3>
+            <p>Production-grade LLM workflows and automation pipelines at Handshake AI — reducing manual workload for marketing and ops teams.</p>
+            <div class="pc-tags"><span>OpenAI API</span><span>LLM Fine-Tuning</span><span>Automation</span></div>
+          </div>
+          <div class="pc-arr"><i data-lucide="arrow-up-right"></i></div>
+        </div>
+
+        <div class="proj-card reveal-up tilt-card" style="--d:160ms">
+          <div class="pc-num">03</div>
+          <div class="pc-body">
+            <h3>Brand Growth Campaign</h3>
+            <p>Multi-platform growth strategy delivering 179% audience growth, 124% engagement lift, and 68% revenue increase over three years.</p>
+            <div class="pc-tags"><span>Social Strategy</span><span>Email</span><span>Analytics</span></div>
+          </div>
+          <div class="pc-arr"><i data-lucide="arrow-up-right"></i></div>
+        </div>
+
+        <div class="proj-card pc-wide reveal-up tilt-card" style="--d:240ms">
+          <div class="pc-num">04</div>
+          <div class="pc-body">
+            <h3>Design Engineer Hub</h3>
+            <p>Web design agency delivering custom, responsive, SEO-optimized websites for local businesses — full lifecycle from discovery through launch.</p>
+            <div class="pc-tags"><span>React</span><span>JavaScript</span><span>Figma</span><span>Bootstrap</span></div>
+          </div>
+          <div class="pc-arr"><i data-lucide="arrow-up-right"></i></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════════════════ -->
   <section class="section contact" id="contact">
     <div class="container">
-      <p class="sec-label reveal-up">04 — Contact</p>
       <div class="contact-inner">
 
         <div class="contact-left reveal-left">
-          <h2 class="sec-heading">Let's Build<br /><span class="gt">Something.</span></h2>
-          <p>
-            Whether it's a website, an AI workflow, a campaign strategy, or just a conversation —
-            I'm always open to new projects and the right collaborations. Let's talk.
+          <p class="eyebrow">05 — Contact</p>
+          <h2 class="sec-h">Let's Build<br /><span class="gt">Something.</span></h2>
+          <p class="body-text">
+            Whether it's a website, an AI workflow, a campaign strategy, or the right conversation —
+            I'm open. Reach out and let's make something that matters.
           </p>
-          <div class="contact-links">
-            <a href="mailto:polancoadvisory@gmail.com" class="c-link">
-              <span class="c-link-icon">✉</span>
-              polancoadvisory@gmail.com
+          <div class="cl-links">
+            <a href="mailto:polancoadvisory@gmail.com" class="cl-item">
+              <i data-lucide="mail"></i><span>polancoadvisory@gmail.com</span>
             </a>
-            <a href="tel:+12018892688" class="c-link">
-              <span class="c-link-icon">☎</span>
-              (201) 889-2688
+            <a href="tel:+12018892688" class="cl-item">
+              <i data-lucide="phone"></i><span>(201) 889-2688</span>
             </a>
-            <a href="https://linkedin.com/in/aidanpolanco" target="_blank" rel="noopener" class="c-link">
-              <span class="c-link-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </span>
-              linkedin.com/in/aidanpolanco
+            <a href="https://linkedin.com/in/aidanpolanco" target="_blank" rel="noopener" class="cl-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>linkedin.com/in/aidanpolanco</span>
             </a>
-            <a href="https://github.com/aidanpolanco" target="_blank" rel="noopener" class="c-link">
-              <span class="c-link-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </span>
-              github.com/aidanpolanco
-            </a>
-            <a href="https://www.instagram.com/aidanplnco/" target="_blank" rel="noopener" class="c-link">
-              <span class="c-link-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </span>
-              @aidanplnco
+            <a href="https://instagram.com/aidanplnco" target="_blank" rel="noopener" class="cl-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <span>@aidanplnco</span>
             </a>
           </div>
         </div>
@@ -492,37 +517,37 @@
         <form class="contact-form reveal-right" id="contactForm" novalidate>
           <div class="fg-row">
             <div class="fg">
-              <input type="text" id="fname" placeholder=" " required autocomplete="given-name" />
-              <label for="fname">Your Name</label>
+              <input type="text" id="fn" placeholder=" " required autocomplete="given-name" />
+              <label for="fn">Your Name</label>
             </div>
             <div class="fg">
-              <input type="email" id="femail" placeholder=" " required autocomplete="email" />
-              <label for="femail">Your Email</label>
+              <input type="email" id="fe" placeholder=" " required autocomplete="email" />
+              <label for="fe">Email Address</label>
             </div>
           </div>
           <div class="fg">
-            <input type="text" id="fsubject" placeholder=" " />
-            <label for="fsubject">Subject</label>
+            <input type="text" id="fs" placeholder=" " />
+            <label for="fs">Subject</label>
           </div>
           <div class="fg">
-            <textarea id="fmessage" rows="6" placeholder=" " required></textarea>
-            <label for="fmessage">Your Message</label>
+            <textarea id="fm" rows="5" placeholder=" " required></textarea>
+            <label for="fm">Message</label>
           </div>
           <button type="submit" class="btn btn-primary btn-mag btn-full">
-            Send Message <span class="btn-arrow">→</span>
+            Send Message <i data-lucide="arrow-right"></i>
           </button>
-          <p class="form-ok" id="formOk">Message sent! I'll get back to you within 24 hours.</p>
+          <p class="form-ok" id="formOk">Sent. I'll be in touch shortly.</p>
         </form>
 
       </div>
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+  <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="f-logo"><span class="nb">[</span>AP<span class="nb">]</span></div>
-      <p class="f-copy">Designed &amp; Built by <strong>Aidan Polanco</strong> · © 2026</p>
+      <a href="#home" class="f-logo"><span class="nb">[</span>AP<span class="nb">]</span></a>
+      <p class="f-copy">Designed &amp; Built by <strong>Aidan Polanco</strong> &nbsp;·&nbsp; © 2026</p>
       <p class="f-domain">aidanpolanco.com</p>
     </div>
   </footer>
