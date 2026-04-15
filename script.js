@@ -346,17 +346,31 @@ function splitHeroName() {
   const form = document.getElementById('contactForm');
   const ok   = document.getElementById('formOk');
   if (!form) return;
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
+    const btn  = form.querySelector('button[type=submit]');
     const orig = btn.innerHTML;
     btn.innerHTML = 'Sending…'; btn.disabled = true;
-    setTimeout(() => {
-      btn.innerHTML = orig; btn.disabled = false;
-      form.reset();
-      ok.classList.add('show');
-      setTimeout(() => ok.classList.remove('show'), 5000);
-    }, 1200);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xqeweyvw', {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    new FormData(form),
+      });
+
+      if (res.ok) {
+        form.reset();
+        ok.classList.add('show');
+        setTimeout(() => ok.classList.remove('show'), 5000);
+      } else {
+        alert('Something went wrong. Please email me directly at polancoadvisory@gmail.com');
+      }
+    } catch {
+      alert('Network error. Please email me directly at polancoadvisory@gmail.com');
+    }
+
+    btn.innerHTML = orig; btn.disabled = false;
   });
 })();
 
