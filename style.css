@@ -714,3 +714,237 @@ body.c-expand .c-dot{opacity:.3}
   .tl-meta{align-items:flex-start}
   .hn-solid,.hn-outline{letter-spacing:-2px}
 }
+
+/* ══ VISUAL OVERHAUL ══════════════════════════════════════════ */
+
+/* Animated gradient border using mask-composite */
+.grad-border {
+  position: relative;
+  isolation: isolate;
+}
+.grad-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from 180deg, #6366f1, #06b6d4, #a5b4fc, #6366f1);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .4s ease;
+  z-index: -1;
+}
+.grad-border:hover::after { opacity: 1; }
+
+/* Decorative section background numbers */
+.about, .experience, .skills, .work, .contact {
+  overflow: hidden;
+}
+.about::before, .experience::before, .skills::before,
+.work::before, .contact::before {
+  content: attr(data-num);
+  position: absolute;
+  font-size: clamp(10rem, 22vw, 20rem);
+  font-weight: 900;
+  font-family: var(--code);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99,102,241,.045);
+  right: -20px;
+  top: 10px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  line-height: 1;
+  letter-spacing: -10px;
+}
+
+/* Hero decorative rings */
+.hb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(99,102,241,.08);
+  pointer-events: none;
+  animation: ringPulse 8s ease-in-out infinite alternate;
+}
+.r1 {
+  width: 700px; height: 700px;
+  right: -150px; top: 50%;
+  transform: translateY(-50%);
+  animation-delay: 0s;
+}
+.r2 {
+  width: 500px; height: 500px;
+  right: -50px; top: 50%;
+  transform: translateY(-50%);
+  border-color: rgba(6,182,212,.06);
+  animation-delay: -3s;
+}
+.r3 {
+  width: 300px; height: 300px;
+  right: 50px; top: 50%;
+  transform: translateY(-50%);
+  border-color: rgba(99,102,241,.05);
+  animation-delay: -6s;
+}
+@keyframes ringPulse {
+  0%   { opacity: .5; transform: translateY(-50%) scale(1); }
+  100% { opacity: 1;  transform: translateY(-50%) scale(1.04); }
+}
+
+/* Hero name glow */
+.hn-solid {
+  text-shadow: 0 0 120px rgba(99,102,241,.22), 0 0 240px rgba(99,102,241,.1);
+}
+.hn-outline {
+  filter: drop-shadow(0 0 40px rgba(165,180,252,.25));
+}
+
+/* Hero pill stronger glow */
+.hero-pill {
+  box-shadow: 0 0 24px rgba(16,185,129,.15);
+}
+
+/* Color-coded experience items */
+.tl-item:nth-child(1) .tl-dot { border-color: #6366f1; box-shadow: 0 0 14px rgba(99,102,241,.5); }
+.tl-item:nth-child(2) .tl-dot { border-color: #06b6d4; box-shadow: 0 0 14px rgba(6,182,212,.5); }
+.tl-item:nth-child(3) .tl-dot { border-color: #8b5cf6; box-shadow: 0 0 14px rgba(139,92,246,.5); }
+.tl-item:nth-child(4) .tl-dot { border-color: #10b981; box-shadow: 0 0 14px rgba(16,185,129,.5); }
+
+.tl-item:nth-child(1) .tl-co { color: #818cf8; }
+.tl-item:nth-child(2) .tl-co { color: #22d3ee; }
+.tl-item:nth-child(3) .tl-co { color: #c084fc; }
+.tl-item:nth-child(4) .tl-co { color: #34d399; }
+
+.tl-item:nth-child(1) .tl-card:hover { border-color: rgba(99,102,241,.4); box-shadow: 0 10px 40px rgba(99,102,241,.12); }
+.tl-item:nth-child(2) .tl-card:hover { border-color: rgba(6,182,212,.4);   box-shadow: 0 10px 40px rgba(6,182,212,.12); }
+.tl-item:nth-child(3) .tl-card:hover { border-color: rgba(139,92,246,.4);  box-shadow: 0 10px 40px rgba(139,92,246,.12); }
+.tl-item:nth-child(4) .tl-card:hover { border-color: rgba(16,185,129,.4);  box-shadow: 0 10px 40px rgba(16,185,129,.12); }
+
+/* Project card background numbers */
+.pc-bg {
+  position: absolute;
+  bottom: -24px;
+  right: 16px;
+  font-size: 9rem;
+  font-weight: 900;
+  font-family: var(--code);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99,102,241,.07);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: -webkit-text-stroke-color .4s;
+  letter-spacing: -4px;
+}
+.proj-card:hover .pc-bg {
+  -webkit-text-stroke-color: rgba(99,102,241,.14);
+}
+
+/* Project card top accent bars — each card a unique accent */
+.proj-card:nth-child(1)::before { background: linear-gradient(90deg, #6366f1, #06b6d4); }
+.proj-card:nth-child(2)::before { background: linear-gradient(90deg, #06b6d4, #8b5cf6); }
+.proj-card:nth-child(3)::before { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+.proj-card:nth-child(4)::before { background: linear-gradient(90deg, #10b981, #06b6d4); }
+
+/* Stats break — much more dramatic */
+.stats-break {
+  background:
+    radial-gradient(ellipse 80% 80% at 20% 50%, rgba(99,102,241,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(6,182,212,.08) 0%, transparent 60%),
+    var(--bg);
+}
+.sb-num {
+  text-shadow: 0 0 80px rgba(99,102,241,.3), 0 0 160px rgba(6,182,212,.15);
+}
+
+/* Skill card gradient accent on header */
+.sk-card .sk-head i {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 22px; height: 22px;
+}
+.sk-card:hover .sk-head h3 {
+  background: var(--grad-t);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: .3s;
+}
+
+/* Eyebrow with accent line */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 2px;
+  background: var(--grad);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* Section heading accent underline */
+.sec-h {
+  position: relative;
+}
+
+/* Stat card stronger glow on hover */
+.stat-card:hover {
+  box-shadow: 0 0 40px rgba(99,102,241,.2), 0 0 80px rgba(99,102,241,.08);
+}
+
+/* Contact section glow gradient bg */
+.contact {
+  background:
+    radial-gradient(ellipse 50% 70% at 0% 50%, rgba(99,102,241,.07) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* Nav logo glow */
+.nav-logo:hover .nb {
+  text-shadow: 0 0 20px rgba(165,180,252,.5);
+}
+
+/* Footer gradient rule */
+.footer {
+  background:
+    linear-gradient(to right, rgba(99,102,241,.05), transparent 50%, rgba(6,182,212,.05)),
+    var(--s1);
+}
+
+/* Stronger hover scale on project cards */
+.proj-card:hover {
+  transform: translateY(-4px);
+}
+
+/* About cards inner gradient */
+.ab-main {
+  background: linear-gradient(135deg,
+    rgba(99,102,241,.08) 0%,
+    rgba(6,182,212,.04) 100%
+  ), var(--s2) !important;
+}
+
+/* Marquee text gradient */
+.marquee-inner span {
+  background: linear-gradient(135deg, var(--text2), var(--muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.marquee-inner em {
+  -webkit-text-fill-color: var(--p);
+}
+
+/* Avatar gradient ring */
+.ab-av {
+  box-shadow: 0 0 0 3px var(--s2), 0 0 0 4px rgba(99,102,241,.4), 0 0 24px rgba(99,102,241,.3);
+}
