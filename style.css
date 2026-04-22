@@ -488,6 +488,10 @@ body.c-expand .c-dot{opacity:.5}
   background:var(--s2);border:1px solid var(--border);
   padding:3px 9px;border-radius:2px;
 }
+.pc-challenge{
+  font-size:.82rem;color:var(--text2);font-style:italic;
+  margin-bottom:8px;line-height:1.55;
+}
 .pc-result{
   font-family:var(--code);font-size:.72rem;color:var(--accent);
   letter-spacing:.5px;margin-bottom:10px;opacity:.8;
@@ -506,6 +510,35 @@ body.c-expand .c-dot{opacity:.5}
   transition:-webkit-text-stroke-color .4s;letter-spacing:-3px;
 }
 .proj-card:hover .pc-bg{-webkit-text-stroke-color:rgba(204,255,0,.055)}
+
+/* ── Thinking ────────────────────────────────────────────────── */
+.thinking{background:var(--bg)}
+.thought-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;gap:1px;background:var(--border);
+}
+.thought{
+  background:var(--s1);padding:36px 30px;
+  position:relative;overflow:hidden;
+  transition:background .3s var(--ease);
+}
+.thought::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.thought:hover{background:var(--s2)}
+.thought:hover::before{transform:scaleX(1)}
+.thought-num{
+  display:block;font-family:var(--code);font-size:.62rem;
+  color:var(--dim);letter-spacing:2px;margin-bottom:20px;
+}
+.thought-h{
+  font-size:1.05rem;font-weight:800;line-height:1.3;
+  letter-spacing:-.4px;margin-bottom:14px;
+}
+.thought-body{font-size:.84rem;color:var(--muted);line-height:1.8}
 
 /* ── Contact ─────────────────────────────────────────────────── */
 .contact{background:var(--s1)}
@@ -580,6 +613,7 @@ body.c-expand .c-dot{opacity:.5}
   .hero-inner{flex-direction:column;align-items:flex-start;padding-bottom:52px}
   .hero-side{display:none}
   .about-grid{grid-template-columns:1fr}
+  .thought-grid{grid-template-columns:1fr}
   .work-grid{grid-template-columns:repeat(2,1fr)}
   .pc-wide{grid-column:span 1}
 }
