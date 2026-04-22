@@ -80,8 +80,19 @@ button{font-family:var(--font)}
   width:28px;height:28px;border:1px solid rgba(204,255,0,.35);
   transition:width .3s var(--ease),height .3s var(--ease),opacity .2s;
 }
-body.c-expand .c-ring{width:46px;height:46px;opacity:.55;border-color:rgba(204,255,0,.55)}
+body.c-expand .c-ring{width:46px;height:46px;opacity:.55;border-color:rgba(204,255,0,.55);box-shadow:0 0 18px rgba(204,255,0,.18),0 0 40px rgba(204,255,0,.07)}
 body.c-expand .c-dot{opacity:.5}
+
+/* ── Pulse Rule ──────────────────────────────────────────────── */
+.pulse-rule{
+  height:1px;width:100%;position:relative;z-index:1;
+  background:var(--accent);
+  animation:rulePulse 3s ease-in-out infinite;
+}
+@keyframes rulePulse{
+  0%,100%{opacity:.12;box-shadow:none}
+  50%{opacity:.9;box-shadow:0 0 24px rgba(204,255,0,.35),0 0 60px rgba(204,255,0,.1)}
+}
 
 /* ── Scroll Progress ─────────────────────────────────────────── */
 .sp{position:fixed;top:0;left:0;height:1px;width:0%;
@@ -328,9 +339,14 @@ body.c-expand .c-dot{opacity:.5}
 .ab-disc-list{display:flex;flex-direction:column;gap:9px}
 .ab-disc-list span{
   font-size:.83rem;color:var(--text2);font-family:var(--code);
-  transition:color .2s;
+  transition:color .2s;white-space:nowrap;overflow:hidden;
 }
 .ab-disc-list span:hover{color:var(--accent)}
+.ab-disc-list span.typing::after{
+  content:'▌';color:var(--accent);
+  animation:blink .7s step-end infinite;margin-left:1px;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
 /* ── Experience ──────────────────────────────────────────────── */
 .experience{background:var(--bg)}
@@ -472,6 +488,10 @@ body.c-expand .c-dot{opacity:.5}
   background:var(--s2);border:1px solid var(--border);
   padding:3px 9px;border-radius:2px;
 }
+.pc-result{
+  font-family:var(--code);font-size:.72rem;color:var(--accent);
+  letter-spacing:.5px;margin-bottom:10px;opacity:.8;
+}
 .pc-arr{
   position:absolute;top:20px;right:20px;color:var(--dim);
   transition:color .3s,transform .3s;
@@ -519,8 +539,11 @@ body.c-expand .c-dot{opacity:.5}
   flex-wrap:wrap;gap:10px;
 }
 .f-logo{font-family:var(--code);font-size:.9rem;font-weight:500}
+.f-currently{
+  font-family:var(--code);font-size:.7rem;color:var(--muted);
+  letter-spacing:.5px;
+}
 .f-copy{font-size:.74rem;color:var(--dim)}
-.f-domain{font-family:var(--code);font-size:.72rem;color:var(--dim)}
 
 /* ── Reveal ──────────────────────────────────────────────────── */
 .reveal-up,.reveal-left,.reveal-right{

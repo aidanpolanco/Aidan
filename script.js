@@ -277,5 +277,75 @@ function splitHeroName() {
 })();
 
 
+/* ── Nav Logo Scramble ────────────────────────────────────────── */
+(function () {
+  const logo = document.querySelector('.nav-logo');
+  if (!logo || window.matchMedia('(pointer: coarse)').matches) return;
+
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@%';
+  const original = 'AP';
+  let animating = false;
+
+  const textNode = [...logo.childNodes].find(n => n.nodeType === 3 && n.textContent.trim() === 'AP');
+  if (!textNode) return;
+
+  logo.addEventListener('mouseenter', () => {
+    if (animating) return;
+    animating = true;
+    const dur = 380;
+    const t0 = performance.now();
+
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      if (p < 1) {
+        textNode.textContent = original.split('').map(ch =>
+          Math.random() > p ? chars[Math.floor(Math.random() * chars.length)] : ch
+        ).join('');
+        requestAnimationFrame(tick);
+      } else {
+        textNode.textContent = original;
+        animating = false;
+      }
+    })(performance.now());
+  });
+})();
+
+
+/* ── Disciplines Typewriter ───────────────────────────────────── */
+(function () {
+  const list = document.querySelector('.ab-disc-list');
+  if (!list) return;
+
+  const spans = list.querySelectorAll('span');
+  const texts = [...spans].map(s => s.textContent);
+  spans.forEach(s => { s.textContent = ''; });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+
+      spans.forEach((span, idx) => {
+        const text = texts[idx];
+        const delay = idx * 130;
+        setTimeout(() => {
+          span.classList.add('typing');
+          let i = 0;
+          const iv = setInterval(() => {
+            span.textContent = text.slice(0, ++i);
+            if (i >= text.length) {
+              clearInterval(iv);
+              span.classList.remove('typing');
+            }
+          }, 26);
+        }, delay);
+      });
+    });
+  }, { threshold: 0.4 });
+
+  io.observe(list);
+})();
+
+
 /* ── Init Lucide Icons ────────────────────────────────────────── */
 if (typeof lucide !== 'undefined') lucide.createIcons();
